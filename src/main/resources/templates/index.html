@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <!--<link th:href="@{~/css/bootstrap.css}" rel="stylesheet" type="text/css">-->
+    <title>mybatis-test</title>
+</head>
+<body>
+<!--/*@thymesVar id="user" type=""*/-->
+    <table align="center">
+        <thead>
+        <tr>
+            <th th:width="100px">ID</th>
+            <th th:width="100px">姓名</th>
+            <th th:width="200px">邮箱</th>
+            <th th:width="200px">电话</th>
+            <th th:width="300px">日期</th>
+        </tr>
+        </thead>
+        <tbody id="data">
+
+        </tbody>
+    </table>
+
+</body>
+<!--<script src="/jquery-2.1.4.js"></script>-->
+<!--<script src="/handlebars.js"></script>-->
+<!--<script src="/index.js"></script>-->
+<script src="/require.js" data-main="main"></script>
+<script id="data-template" type="text/x-handlebars-template">
+    {{#user}}
+    <tr>
+        <td th:width="100px" align="center">{{pkUserId}}</td>
+        <td th:width="100px" align="center">{{loginName}}</td>
+        <td th:width="200px" align="center">{{userEmail}}</td>
+        <td th:width="200px" align="center">{{userPhone}}</td>
+        <td th:width="300px" align="center">{{formatnumber createTime}}</td>
+    </tr>
+    {{/user}}
+</script>
+
+</html>
