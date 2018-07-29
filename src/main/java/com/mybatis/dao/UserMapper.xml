@@ -3,6 +3,15 @@
 <mapper namespace="com.mybatis.dao.UserMapper" >
 
     <select id="getUser" resultType="com.mybatis.domain.User">
-        SELECT * FROM `user`
+        SELECT * FROM user_demo ORDER by pk_user_id asc
     </select>
+
+    <select id="getById" resultType="com.mybatis.domain.User">
+        SELECT * FROM user_demo where pk_user_id = #{id}
+    </select>
+
+
+    <update id="update">
+       update user_demo SET version = version+1 ,user_phone = #{userPhone} where pk_user_id = #{pkUserId} and version = #{version}
+    </update>
 </mapper>

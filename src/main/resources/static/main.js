@@ -12,6 +12,14 @@ require(["jquery","handlebars","index"], function($,handlebars) {
 
     var template = handlebars.compile($("#data-template").html());
 
+    handlebars.registerHelper('formatnumber', function(num, options){
+        num = num + '';
+        return num.replace(/(?=(?!^)(?:\d{3})+(?:\.|$))(\d{3}(\.\d+$)?)/g,',$1');
+    });
+    handlebars.registerHelper('formattext', function(text, options){
+        return text.substring(0, 3)+'...';
+    });
+
     $(function () {
         init();
     })

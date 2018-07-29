@@ -8,7 +8,7 @@ import javax.persistence.Table;
 import java.util.Date;
 
 @Data
-@Table(name = "user")
+@Table(name = "user_demo")
 public class User {
         /**
          * 用户编号
@@ -49,6 +49,13 @@ public class User {
          */
         @Column(name = "user_phone")
         private String userPhone;
+
+
+        /**
+         *
+         */
+        @Column(name = "version")
+        private String version;
 
         /**
          * 是否已经删除(0表示删除，1表示没删除)

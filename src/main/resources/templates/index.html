@@ -14,7 +14,9 @@
             <th th:width="100px">姓名</th>
             <th th:width="200px">邮箱</th>
             <th th:width="200px">电话</th>
+            <th th:width="200px">版本</th>
             <th th:width="300px">日期</th>
+            <th th:width="300px">操作</th>
         </tr>
         </thead>
         <tbody id="data">
@@ -32,9 +34,11 @@
     <tr>
         <td th:width="100px" align="center">{{pkUserId}}</td>
         <td th:width="100px" align="center">{{loginName}}</td>
-        <td th:width="200px" align="center">{{userEmail}}</td>
-        <td th:width="200px" align="center">{{userPhone}}</td>
-        <td th:width="300px" align="center">{{formatnumber createTime}}</td>
+        <td th:width="200px" align="center">{{formattext userEmail}}</td>
+        <td th:width="200px" align="center">{{formatnumber userPhone}}</td>
+        <td th:width="200px" align="center">{{version}}</td>
+        <td th:width="300px" align="center">{{createTime}}</td>
+        <td th:width="300px" align="center"><a href='/toupdate/{{pkUserId}}'>修改</a> </td>
     </tr>
     {{/user}}
 </script>
